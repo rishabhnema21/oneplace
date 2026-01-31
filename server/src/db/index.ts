@@ -17,6 +17,6 @@ pool.on("error", (err) => {
     console.log("Database connection error: ",err);
 })
 
-export const db = drizzle({client: pool, schema})
+export const db = drizzle(pool, { schema });
 
 // A connection pool is something like a cache of connections of db, that are kept open and reused. opening and closing of the db is slow, so instead of creating new connection for every request, we just use the previously existing connection so that database connection limit could be saved.
