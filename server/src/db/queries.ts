@@ -66,7 +66,7 @@ export const getProductById = async (id: string) => {
   });
 };
 
-export const getProdutcByUserId = async (userId: string) => {
+export const getProductByUserId = async (userId: string) => {
   return db.query.products.findFirst({
     where: eq(products.userId, userId),
     with: { user: true },
